@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Cinta</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background-color: pink;
+      padding-top: 50px;
+    }
+
+    input,
+    button {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .hasil {
+      margin-top: 20px;
+      font-size: 20px;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Kalkulator Cinta</h1>
+  <p>Masukkan namamu dan nama doi:</p>
+  <input type="text" id="nama1" placeholder="Yarka">
+  <input type="text" id="nama2" placeholder="Yuda">
+  <br>
+  <button onclick="hitungCinta()">Hitung Cinta</button>
+  <div class="hasil" id="hasil"></div>
+
+  <script>
+    function hitungCinta() {
+      let nama1 = document.getElementById("nama1").value;
+      let nama2 = document.getElementById("nama2").value;
+      let persentase = Math.floor(Math.random() * 51) + 50; // 50%–100%
+      let hasil = `${nama1} & ${nama2}, tingkat cintanya ${persentase}%!<br><br>`;
+
+      if (persentase > 90) {
+        hasil += "Wah, kalian jodoh langgeng seumur hidup!";
+      } else if (persentase > 75) {
+        hasil += "Bisa jadi couple goals nih!";
+      } else {
+        hasil += "Cinta itu butuh usaha, semangat ya!";
+      }
+
+      document.getElementById("hasil").innerHTML = hasil;
+    }
+  </script>
+</body>
